@@ -8,18 +8,32 @@ export default class processes1604368060230 implements MigrationInterface {
         columns: [
           {
             name: 'id',
-            type: 'uuid',
+            type: 'integer',
             isPrimary: true,
-            generationStrategy: 'uuid',
+            unsigned: true,
+            generationStrategy: 'increment',
           },
           {
             name: 'process_number',
             type: 'integer',
+            unsigned: true,
             isNullable: false,
           },
           {
             name: 'date',
             type: 'timestamp with time zone',
+          },
+          {
+            name: 'deputy_id',
+            type: 'integer',
+          },
+        ],
+        foreignKeys: [
+          {
+            name: 'contractor',
+            columnNames: ['deputy_id'],
+            referencedTableName: 'deputies',
+            referencedColumnNames: ['id'],
           },
         ],
       }),

@@ -8,14 +8,19 @@ export default class deputies1604368120226 implements MigrationInterface {
         columns: [
           {
             name: 'id',
-            type: 'uuid',
+            type: 'integer',
             isPrimary: true,
-            generationStrategy: 'uuid',
+            unsigned: true,
+            generationStrategy: 'increment',
           },
           {
             name: 'name',
             type: 'string',
             isNullable: false,
+          },
+          {
+            name: 'affiliation',
+            type: 'string',
           },
         ],
       }),

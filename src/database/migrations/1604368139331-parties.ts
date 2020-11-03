@@ -8,9 +8,10 @@ export default class parties1604368139331 implements MigrationInterface {
         columns: [
           {
             name: 'id',
-            type: 'uuid',
+            type: 'integer',
             isPrimary: true,
-            generationStrategy: 'uuid',
+            unsigned: true,
+            generationStrategy: 'increment',
           },
           {
             name: 'name',

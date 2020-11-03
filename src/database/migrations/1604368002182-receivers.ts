@@ -8,9 +8,10 @@ export default class receivers1604368002182 implements MigrationInterface {
         columns: [
           {
             name: 'id',
-            type: 'uuid',
+            type: 'integer',
             isPrimary: true,
-            generationStrategy: 'uuid',
+            unsigned: true,
+            generationStrategy: 'increment',
           },
           {
             name: 'name',
@@ -35,6 +36,7 @@ export default class receivers1604368002182 implements MigrationInterface {
           {
             name: 'CPF/CNPJ',
             type: 'numeric',
+            unsigned: true,
             isNullable: false,
           },
         ],
