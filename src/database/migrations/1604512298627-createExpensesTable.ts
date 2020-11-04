@@ -1,6 +1,7 @@
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
-export default class expenses1604367994930 implements MigrationInterface {
+export default class createExpensesTable1604512298627
+  implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
@@ -22,8 +23,8 @@ export default class expenses1604367994930 implements MigrationInterface {
           {
             name: 'value',
             type: 'money',
-            precision: 2,
-            unsigned: true,
+            // precision: 2,
+            // unsigned: true,
             isNullable: false,
           },
           {
@@ -52,7 +53,7 @@ export default class expenses1604367994930 implements MigrationInterface {
             referencedColumnNames: ['id'],
           },
           {
-            name: 'contrator',
+            name: 'contractor',
             columnNames: ['deputy_id'],
             referencedTableName: 'deputies',
             referencedColumnNames: ['id'],
@@ -69,6 +70,6 @@ export default class expenses1604367994930 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable('expense');
+    await queryRunner.dropTable('expenses');
   }
 }

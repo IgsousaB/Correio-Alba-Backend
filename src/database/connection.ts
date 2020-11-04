@@ -1,6 +1,4 @@
 import { createConnection } from 'typeorm';
+// import ConnectionOptions from '../../ormconfig';
 
 createConnection();
-
-// IMPORTAR NO SERVER
-// FAZER AS MIGRAÇÕES

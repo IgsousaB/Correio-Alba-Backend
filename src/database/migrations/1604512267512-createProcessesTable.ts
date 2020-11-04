@@ -1,10 +1,11 @@
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
-export default class parties1604368139331 implements MigrationInterface {
+export default class createProcessesTable1604512267512
+  implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: 'parties',
+        name: 'processes',
         columns: [
           {
             name: 'id',
@@ -14,9 +15,18 @@ export default class parties1604368139331 implements MigrationInterface {
             generationStrategy: 'increment',
           },
           {
-            name: 'name',
-            type: 'string',
+            name: 'process_number',
+            type: 'integer',
+            unsigned: true,
             isNullable: false,
+          },
+          {
+            name: 'date',
+            type: 'timestamp with time zone',
+          },
+          {
+            name: 'deputy_id',
+            type: 'integer',
           },
         ],
       }),
@@ -24,6 +34,6 @@ export default class parties1604368139331 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable('parties');
+    await queryRunner.dropTable('processes');
   }
 }

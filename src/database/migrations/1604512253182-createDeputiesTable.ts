@@ -1,6 +1,7 @@
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
-export default class deputies1604368120226 implements MigrationInterface {
+export default class createDeputiesTable1604512253182
+  implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
@@ -15,12 +16,12 @@ export default class deputies1604368120226 implements MigrationInterface {
           },
           {
             name: 'name',
-            type: 'string',
+            type: 'text',
             isNullable: false,
           },
           {
             name: 'affiliation',
-            type: 'string',
+            type: 'text',
           },
         ],
       }),
