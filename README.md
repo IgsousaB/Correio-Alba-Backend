@@ -1,4 +1,4 @@
 # setup
 
 # Preview
-[EntityPage](https://github.com/IgsousaB/Correio-Alba-Backend/blob/master/screenshots/entitypage.png)
+[Preview3](https://github.com/IgsousaB/Correio-Alba-Backend/blob/master/screenshots/entitypage.png)
