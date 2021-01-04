@@ -21,12 +21,20 @@ export default class createProcessesTable1604512267512
             isNullable: false,
           },
           {
+            name: 'deputy_id',
+            type: 'integer',
+          },
+          {
             name: 'date',
             type: 'timestamp with time zone',
           },
+        ],
+        foreignKeys: [
           {
-            name: 'deputy_id',
-            type: 'integer',
+            name: 'contractor',
+            columnNames: ['deputy_id'],
+            referencedTableName: 'deputies',
+            referencedColumnNames: ['id'],
           },
         ],
       }),
